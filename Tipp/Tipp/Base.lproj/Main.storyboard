@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tipp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNh-14-1Ks">
+                                <rect key="frame" x="0.0" y="20" width="375" height="167"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="49"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-HB-nzX">
+                                <rect key="frame" x="37" y="222" width="300" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM4-DU-Dnj">
+                                <rect key="frame" x="37.5" y="446" width="300" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlt-uo-jEO">
+                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <state key="normal" title="Calulate">
+                                    <color key="titleColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="74d-U8-GhY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3F-8J-ew3">
+                                <rect key="frame" x="37.5" y="265.5" width="300" height="33.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Do-ID-2WK">
+                                <rect key="frame" x="37.5" y="377.5" width="300" height="33.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQy-O8-M5e">
+                                <rect key="frame" x="37.5" y="334" width="300" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faD-SQ-gaD">
+                                <rect key="frame" x="37" y="497" width="300" height="33.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qQy-O8-M5e" firstAttribute="width" secondItem="J3F-8J-ew3" secondAttribute="width" id="0T6-Hv-Ni1"/>
+                            <constraint firstItem="HM4-DU-Dnj" firstAttribute="height" secondItem="9Do-ID-2WK" secondAttribute="height" id="1yF-tg-rAd"/>
+                            <constraint firstItem="faD-SQ-gaD" firstAttribute="centerX" secondItem="HM4-DU-Dnj" secondAttribute="centerX" id="3kg-1P-WtA"/>
+                            <constraint firstItem="nlt-uo-jEO" firstAttribute="bottom" secondItem="Uee-0j-aNJ" secondAttribute="bottom" id="4w7-dH-dZj"/>
+                            <constraint firstItem="faD-SQ-gaD" firstAttribute="height" secondItem="HM4-DU-Dnj" secondAttribute="height" id="9Fr-kI-mm0"/>
+                            <constraint firstItem="9Do-ID-2WK" firstAttribute="height" secondItem="qQy-O8-M5e" secondAttribute="height" id="APg-hM-qXF"/>
+                            <constraint firstItem="v5p-HB-nzX" firstAttribute="top" secondItem="vNh-14-1Ks" secondAttribute="bottom" constant="35" id="D8h-T4-9dZ"/>
+                            <constraint firstItem="vNh-14-1Ks" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" id="EhB-fx-5lF"/>
+                            <constraint firstItem="faD-SQ-gaD" firstAttribute="top" secondItem="HM4-DU-Dnj" secondAttribute="bottom" constant="17.5" id="F3P-OU-uBc"/>
+                            <constraint firstItem="v5p-HB-nzX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="HUR-s3-CTu"/>
+                            <constraint firstItem="J3F-8J-ew3" firstAttribute="height" secondItem="v5p-HB-nzX" secondAttribute="height" id="INT-bY-fTm"/>
+                            <constraint firstItem="HM4-DU-Dnj" firstAttribute="centerX" secondItem="9Do-ID-2WK" secondAttribute="centerX" id="Kqp-ak-oUZ"/>
+                            <constraint firstItem="vNh-14-1Ks" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="Mf5-aX-htT"/>
+                            <constraint firstItem="9Do-ID-2WK" firstAttribute="width" secondItem="qQy-O8-M5e" secondAttribute="width" id="RcI-co-L9y"/>
+                            <constraint firstItem="qQy-O8-M5e" firstAttribute="centerX" secondItem="J3F-8J-ew3" secondAttribute="centerX" id="VZf-TN-PoN"/>
+                            <constraint firstItem="qQy-O8-M5e" firstAttribute="top" secondItem="J3F-8J-ew3" secondAttribute="bottom" constant="35" id="btC-Oz-K6D"/>
+                            <constraint firstItem="J3F-8J-ew3" firstAttribute="width" secondItem="v5p-HB-nzX" secondAttribute="width" id="bye-FQ-gP4"/>
+                            <constraint firstItem="9Do-ID-2WK" firstAttribute="top" secondItem="qQy-O8-M5e" secondAttribute="bottom" constant="10" id="dz2-Mt-1y2"/>
+                            <constraint firstItem="nlt-uo-jEO" firstAttribute="trailing" secondItem="Uee-0j-aNJ" secondAttribute="trailing" id="fdT-mq-8Za"/>
+                            <constraint firstItem="J3F-8J-ew3" firstAttribute="centerX" secondItem="v5p-HB-nzX" secondAttribute="centerX" id="hxy-iG-wLe"/>
+                            <constraint firstItem="v5p-HB-nzX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="jTn-pF-wBa"/>
+                            <constraint firstItem="nlt-uo-jEO" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" id="keM-5r-IHK"/>
+                            <constraint firstItem="vNh-14-1Ks" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="m1Y-63-WRc"/>
+                            <constraint firstItem="nlt-uo-jEO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="n5L-PG-i8s"/>
+                            <constraint firstItem="9Do-ID-2WK" firstAttribute="centerX" secondItem="qQy-O8-M5e" secondAttribute="centerX" id="nGC-sf-5vx"/>
+                            <constraint firstItem="v5p-HB-nzX" firstAttribute="centerX" secondItem="vNh-14-1Ks" secondAttribute="centerX" id="nUM-im-U4h"/>
+                            <constraint firstItem="faD-SQ-gaD" firstAttribute="width" secondItem="HM4-DU-Dnj" secondAttribute="width" id="qAj-sz-sjC"/>
+                            <constraint firstItem="qQy-O8-M5e" firstAttribute="height" secondItem="J3F-8J-ew3" secondAttribute="height" id="s9x-wO-xHG"/>
+                            <constraint firstItem="HM4-DU-Dnj" firstAttribute="top" secondItem="9Do-ID-2WK" secondAttribute="bottom" constant="35" id="taF-fv-KYt"/>
+                            <constraint firstItem="vNh-14-1Ks" firstAttribute="trailing" secondItem="Uee-0j-aNJ" secondAttribute="trailing" id="tuK-8S-v2Q"/>
+                            <constraint firstItem="HM4-DU-Dnj" firstAttribute="width" secondItem="9Do-ID-2WK" secondAttribute="width" id="uzF-2z-7zD"/>
+                            <constraint firstItem="J3F-8J-ew3" firstAttribute="top" secondItem="v5p-HB-nzX" secondAttribute="bottom" constant="10" id="yJU-zD-zIO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="billAmount" destination="J3F-8J-ew3" id="oLj-ED-JRh"/>
+                        <outlet property="tipAmount" destination="faD-SQ-gaD" id="57C-ae-UvF"/>
+                        <outlet property="tipPercentage" destination="9Do-ID-2WK" id="fJ6-H9-wqW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
