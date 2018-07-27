@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     @IBOutlet weak var billAmount: UITextField!
     @IBOutlet weak var tipPercentage: UITextField!
     @IBOutlet weak var tipAmount: UILabel!
 
-    var bill: Bill = Bill()
+    var wcSession: WCSession?
+    var tip: Tip = Tip()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
+        if WCSession.isSupported() {
+            if let session = wcSession {
+                wcSession = WCSession.default
+                session.delegate = self
+                session.activate()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +36,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
-
-        if let totalBill = billAmount.text, let tip = tipPercentage.text {
-            let tb = Double(totalBill)
-            let tp = Double(tip)
-
-            bill = Bill(bill: tb, tipPercentage: tp)
+        if let billAmount = billAmount.text,  let tipPercentage = tipPercentage.text {
+            if let bill = Double(billAmount), let percentage = Int(tipPercentage) {
+                tip = Tip(total: bill, percentage: percentage)
+            }
         }
 
-        tipAmount.text = String(format: "$%.02f", bill.tipAmount)
+        tipAmount.text = tip.formatAmount(value: tip.amount)
     }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+    }
+
 }
 

@@ -45,6 +45,7 @@
                                     <color key="titleColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="a:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="pWe-en-t3o"/>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="74d-U8-GhY"/>
                                 </connections>
                             </button>

@@ -1,16 +1,168 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--TotalInterface-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="TotalInterface" id="AgC-eL-Hgc" customClass="TotalInterfaceController" customModule="Tipp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Total Bill" id="84W-p7-HhZ"/>
+                        <separator alignment="left" id="MoF-Yx-vDH">
+                            <color key="color" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <group width="1" alignment="left" id="bI5-cf-S15">
+                            <items>
+                                <button width="30" height="30" alignment="right" title="-" id="hxD-QG-onV">
+                                    <color key="backgroundColor" red="0.9192116857" green="0.42374359979999998" blue="0.4056973082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="29"/>
+                                    <connections>
+                                        <action selector="decrementState" destination="AgC-eL-Hgc" id="ldY-Ck-JXi"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="30" alignment="left" title="+" id="Lqh-79-ADU">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="29"/>
+                                    <connections>
+                                        <action selector="incrementState" destination="AgC-eL-Hgc" id="zPY-2n-ZsF"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="0.80000000000000004" widthAdjustment="5" height="0.29999999999999999" alignment="center" verticalAlignment="center" id="8yJ-oL-yX1">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="$" id="iBf-mA-K9r">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Total" id="Gxn-dR-GCy">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <group width="134" height="0.29999999999999999" alignment="center" verticalAlignment="bottom" id="PHr-l3-jPw">
+                            <items>
+                                <button width="0.20000000000000001" widthAdjustment="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" title="1" id="Nmm-B9-ct6">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="19"/>
+                                    <connections>
+                                        <action selector="byOne" destination="AgC-eL-Hgc" id="vCl-GQ-mGT"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" widthAdjustment="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" title="5" id="UFc-59-lGF">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="19"/>
+                                    <connections>
+                                        <action selector="byFive" destination="AgC-eL-Hgc" id="Tar-CI-dc1"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" widthAdjustment="6" height="0.69999999999999996" alignment="center" verticalAlignment="center" title="10" id="OJW-VP-SiJ">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="19"/>
+                                    <connections>
+                                        <action selector="byTen" destination="AgC-eL-Hgc" id="bJi-zQ-agg"/>
+                                    </connections>
+                                </button>
+                                <button width="0.29999999999999999" widthAdjustment="5" height="0.69999999999999996" alignment="center" verticalAlignment="center" title="100" id="wtS-B6-QF8">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="19"/>
+                                    <connections>
+                                        <action selector="byOneHundred" destination="AgC-eL-Hgc" id="n1p-nb-swP"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="billAmount" destination="Gxn-dR-GCy" id="xb3-rW-88Z"/>
+                        <outlet property="groupTotalAmount" destination="8yJ-oL-yX1" id="mhI-Ce-bxE"/>
+                        <segue destination="FS0-Ev-oj8" kind="relationship" relationship="nextPage" id="D9t-WN-Wog"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--PercentageInterface-->
+        <scene sceneID="AeZ-aD-agc">
+            <objects>
+                <controller identifier="PercentageInterface" id="FS0-Ev-oj8" customClass="PercentageInterfaceController" customModule="Tipp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Percentage" id="EGr-NQ-mcu"/>
+                        <separator alignment="left" id="qZe-tG-CqN">
+                            <color key="color" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <group width="134" alignment="center" verticalAlignment="center" id="p6b-i1-Ijl">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="%" id="ZtU-gl-f6P">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="0" id="uEL-kR-dQj">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="0.29999999999999999" alignment="center" verticalAlignment="bottom" id="a5B-uN-m6G">
+                            <items>
+                                <button height="0.69999999999999996" heightAdjustment="2" alignment="center" verticalAlignment="center" title="%15" id="uZm-Sc-i5F">
+                                    <connections>
+                                        <action selector="lowPercentage" destination="FS0-Ev-oj8" id="RKJ-h4-yLa"/>
+                                    </connections>
+                                </button>
+                                <button height="0.69999999999999996" heightAdjustment="2" alignment="center" verticalAlignment="center" title="%20" id="kZw-pG-Vgx">
+                                    <connections>
+                                        <action selector="medPercentage" destination="FS0-Ev-oj8" id="XdF-2p-fgo"/>
+                                    </connections>
+                                </button>
+                                <button height="0.69999999999999996" heightAdjustment="2" alignment="center" verticalAlignment="center" title="%25" id="xiI-Ai-99h">
+                                    <connections>
+                                        <action selector="highPercentage" destination="FS0-Ev-oj8" id="PaP-94-1Rt"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="tipPercentage" destination="uEL-kR-dQj" id="P0J-cL-CNu"/>
+                        <segue destination="TPk-8w-ajB" kind="relationship" relationship="nextPage" id="FBo-td-URV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--TipInterface-->
+        <scene sceneID="th6-MM-vPA">
+            <objects>
+                <controller identifier="TipInterface" id="TPk-8w-ajB" customClass="TipInterfaceController" customModule="Tipp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Total Tip" id="cRa-S5-AIs"/>
+                        <separator alignment="left" id="hbc-Wb-Gg8">
+                            <color key="color" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </separator>
+                        <group width="0.80000000000000004" widthAdjustment="5" height="0.29999999999999999" alignment="center" verticalAlignment="center" id="zvy-Lq-cil">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="$" id="9mq-Lv-x2N">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Total" id="dhZ-Ii-Jja">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="24"/>
+                                </label>
+                            </items>
+                            <color key="backgroundColor" red="0.14901960780000001" green="0.76078431369999999" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <label height="0.29999999999999999" alignment="center" verticalAlignment="bottom" text="Thanks for Tipping" textAlignment="center" numberOfLines="2" id="v5a-Oo-WfL">
+                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="13"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="tipAmount" destination="dhZ-Ii-Jja" id="dGn-bT-zpy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="725" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +183,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Tipp_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

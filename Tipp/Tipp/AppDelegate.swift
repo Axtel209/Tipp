@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var session: WCSession? {
+        didSet{
+            if let session = session{
+                session.delegate = self
+                session.activate()
+            }
+        }
+    }
+
+    let tip = Tip(total: 0.0, percentage: 0)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if WCSession.isSupported() {
+            session = WCSession.default
+        }
+
         return true
     }
 
@@ -41,6 +56,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
+}
+
+extension AppDelegate: WCSessionDelegate {
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+
+    func sessionDidBecomeInactive(_ session: WCSession) {
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        DispatchQueue.main.async {
+            if(message["getObject"] as? Tip) != nil {
+                NSKeyedArchiver.setClassName("Tip", for: Tip.self)
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.tip)
+                replyHandler(["newObject": data])
+            }
+        }
+    }
 
 }
 

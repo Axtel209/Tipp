@@ -16,13 +16,15 @@
 		FB1BCD3320FEAF3800E2CA82 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1BCD3120FEAF3800E2CA82 /* Interface.storyboard */; };
 		FB1BCD3520FEAF3900E2CA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1BCD3420FEAF3900E2CA82 /* Assets.xcassets */; };
 		FB1BCD3C20FEAF3900E2CA82 /* Tipp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB1BCD3B20FEAF3900E2CA82 /* Tipp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FB1BCD4120FEAF3900E2CA82 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD4020FEAF3900E2CA82 /* InterfaceController.swift */; };
+		FB1BCD4120FEAF3900E2CA82 /* TotalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD4020FEAF3900E2CA82 /* TotalInterfaceController.swift */; };
 		FB1BCD4320FEAF3900E2CA82 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD4220FEAF3900E2CA82 /* ExtensionDelegate.swift */; };
 		FB1BCD4520FEAF3900E2CA82 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD4420FEAF3900E2CA82 /* NotificationController.swift */; };
 		FB1BCD4720FEAF3900E2CA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1BCD4620FEAF3900E2CA82 /* Assets.xcassets */; };
-		FB1BCD7420FEDEA000E2CA82 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Bill.swift */; };
-		FB1BCD7520FEDF3800E2CA82 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Bill.swift */; };
+		FB1BCD7420FEDEA000E2CA82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Tip.swift */; };
+		FB1BCD7520FEDF3800E2CA82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Tip.swift */; };
 		FB1BCD7720FEEE5C00E2CA82 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7620FEEE5C00E2CA82 /* StringHelper.swift */; };
+		FB95509D210AB8EF0019D310 /* PercentageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95509C210AB8EE0019D310 /* PercentageInterfaceController.swift */; };
+		FB95509F210ADB820019D310 /* TipInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95509E210ADB820019D310 /* TipInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,14 +82,16 @@
 		FB1BCD3420FEAF3900E2CA82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB1BCD3620FEAF3900E2CA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1BCD3B20FEAF3900E2CA82 /* Tipp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tipp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB1BCD4020FEAF3900E2CA82 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		FB1BCD4020FEAF3900E2CA82 /* TotalInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalInterfaceController.swift; sourceTree = "<group>"; };
 		FB1BCD4220FEAF3900E2CA82 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		FB1BCD4420FEAF3900E2CA82 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		FB1BCD4620FEAF3900E2CA82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB1BCD4820FEAF3900E2CA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1BCD4920FEAF3900E2CA82 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		FB1BCD7320FEDEA000E2CA82 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		FB1BCD7320FEDEA000E2CA82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		FB1BCD7620FEEE5C00E2CA82 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		FB95509C210AB8EE0019D310 /* PercentageInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageInterfaceController.swift; sourceTree = "<group>"; };
+		FB95509E210ADB820019D310 /* TipInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,7 @@
 			children = (
 				FB1BCD1D20FEAF3700E2CA82 /* AppDelegate.swift */,
 				FB1BCD1F20FEAF3700E2CA82 /* ViewController.swift */,
-				FB1BCD7320FEDEA000E2CA82 /* Bill.swift */,
+				FB1BCD7320FEDEA000E2CA82 /* Tip.swift */,
 				FB1BCD2120FEAF3700E2CA82 /* Main.storyboard */,
 				FB1BCD2420FEAF3800E2CA82 /* Assets.xcassets */,
 				FB1BCD2620FEAF3800E2CA82 /* LaunchScreen.storyboard */,
@@ -156,7 +160,9 @@
 		FB1BCD3F20FEAF3900E2CA82 /* Tipp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FB1BCD4020FEAF3900E2CA82 /* InterfaceController.swift */,
+				FB1BCD4020FEAF3900E2CA82 /* TotalInterfaceController.swift */,
+				FB95509C210AB8EE0019D310 /* PercentageInterfaceController.swift */,
+				FB95509E210ADB820019D310 /* TipInterfaceController.swift */,
 				FB1BCD4220FEAF3900E2CA82 /* ExtensionDelegate.swift */,
 				FB1BCD4420FEAF3900E2CA82 /* NotificationController.swift */,
 				FB1BCD4620FEAF3900E2CA82 /* Assets.xcassets */,
@@ -300,7 +306,7 @@
 			files = (
 				FB1BCD7720FEEE5C00E2CA82 /* StringHelper.swift in Sources */,
 				FB1BCD2020FEAF3700E2CA82 /* ViewController.swift in Sources */,
-				FB1BCD7420FEDEA000E2CA82 /* Bill.swift in Sources */,
+				FB1BCD7420FEDEA000E2CA82 /* Tip.swift in Sources */,
 				FB1BCD1E20FEAF3700E2CA82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,10 +315,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1BCD7520FEDF3800E2CA82 /* Bill.swift in Sources */,
+				FB1BCD7520FEDF3800E2CA82 /* Tip.swift in Sources */,
 				FB1BCD4520FEAF3900E2CA82 /* NotificationController.swift in Sources */,
+				FB95509D210AB8EF0019D310 /* PercentageInterfaceController.swift in Sources */,
 				FB1BCD4320FEAF3900E2CA82 /* ExtensionDelegate.swift in Sources */,
-				FB1BCD4120FEAF3900E2CA82 /* InterfaceController.swift in Sources */,
+				FB1BCD4120FEAF3900E2CA82 /* TotalInterfaceController.swift in Sources */,
+				FB95509F210ADB820019D310 /* TipInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
