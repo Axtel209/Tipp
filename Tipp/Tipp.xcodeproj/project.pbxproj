@@ -22,7 +22,6 @@
 		FB1BCD4720FEAF3900E2CA82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1BCD4620FEAF3900E2CA82 /* Assets.xcassets */; };
 		FB1BCD7420FEDEA000E2CA82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Tip.swift */; };
 		FB1BCD7520FEDF3800E2CA82 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7320FEDEA000E2CA82 /* Tip.swift */; };
-		FB1BCD7720FEEE5C00E2CA82 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BCD7620FEEE5C00E2CA82 /* StringHelper.swift */; };
 		FB95509D210AB8EF0019D310 /* PercentageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95509C210AB8EE0019D310 /* PercentageInterfaceController.swift */; };
 		FB95509F210ADB820019D310 /* TipInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95509E210ADB820019D310 /* TipInterfaceController.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		FB1BCD4820FEAF3900E2CA82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB1BCD4920FEAF3900E2CA82 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FB1BCD7320FEDEA000E2CA82 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
-		FB1BCD7620FEEE5C00E2CA82 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		FB95509C210AB8EE0019D310 /* PercentageInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageInterfaceController.swift; sourceTree = "<group>"; };
 		FB95509E210ADB820019D310 /* TipInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,7 +140,6 @@
 				FB1BCD2420FEAF3800E2CA82 /* Assets.xcassets */,
 				FB1BCD2620FEAF3800E2CA82 /* LaunchScreen.storyboard */,
 				FB1BCD2920FEAF3800E2CA82 /* Info.plist */,
-				FB1BCD7620FEEE5C00E2CA82 /* StringHelper.swift */,
 			);
 			path = Tipp;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1BCD7720FEEE5C00E2CA82 /* StringHelper.swift in Sources */,
 				FB1BCD2020FEAF3700E2CA82 /* ViewController.swift in Sources */,
 				FB1BCD7420FEDEA000E2CA82 /* Tip.swift in Sources */,
 				FB1BCD1E20FEAF3700E2CA82 /* AppDelegate.swift in Sources */,

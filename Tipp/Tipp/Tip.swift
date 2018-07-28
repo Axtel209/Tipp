@@ -42,13 +42,13 @@ class Tip: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder){
         self.init(total: 0.0, percentage: 0)
 
-        total = aDecoder.decodeObject(forKey: "total") as! Double
-        percentage = aDecoder.decodeObject(forKey: "percentage") as! Int
+        _total = aDecoder.decodeObject(forKey: "total") as! Double
+        _percentage = aDecoder.decodeObject(forKey: "percentage") as! Int
     }
 
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(total, forKey: "total")
-        aCoder.encode(percentage, forKey: "percentage")
+        aCoder.encode(_total, forKey: "total")
+        aCoder.encode(_percentage, forKey: "percentage")
     }
 
     func formatAmount(value: Double) -> String {

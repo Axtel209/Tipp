@@ -16,7 +16,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var tipAmount: UILabel!
 
     var wcSession: WCSession?
-    var tip: Tip = Tip()
+    var tip: Tip = Tip.getInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,17 @@ class ViewController: UIViewController, WCSessionDelegate {
                 session.activate()
             }
         }
+
+        if let session = wcSession {
+            if session.isPaired && session.isReachable {
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.tip)
+                session.sendMessageData(data, replyHandler: { (data) in
+                    print(data)
+                }) { (error) in
+                    print(error)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +47,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
+        print("Hello")
         if let billAmount = billAmount.text,  let tipPercentage = tipPercentage.text {
             if let bill = Double(billAmount), let percentage = Int(tipPercentage) {
                 tip = Tip(total: bill, percentage: percentage)
@@ -43,6 +55,17 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
 
         tipAmount.text = tip.formatAmount(value: tip.amount)
+
+        if let session = wcSession {
+            if session.isPaired && session.isReachable {
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.tip)
+                session.sendMessageData(data, replyHandler: { (data) in
+                    print(data)
+                }) { (error) in
+                    print(error)
+                }
+            }
+        }
     }
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {

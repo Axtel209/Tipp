@@ -26,10 +26,6 @@ class TipInterfaceController: WKInterfaceController {
     }
 
     override func didAppear() {
-        print(tip.total)
-        print(tip.percentage)
-        print(tip.amount)
-
         let tipString = String(format: "%.02f", tip.calculateTip())
         tipAmount.setText(tipString)
     }

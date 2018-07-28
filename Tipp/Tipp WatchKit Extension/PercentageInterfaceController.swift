@@ -24,11 +24,9 @@ class PercentageInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
         crownSequencer.focus()
-
         percentage = tip.percentage
     }
 
@@ -38,7 +36,6 @@ class PercentageInterfaceController: WKInterfaceController, WKCrownDelegate {
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 

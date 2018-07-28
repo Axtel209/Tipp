@@ -8,20 +8,51 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-class TotalInterfaceController: WKInterfaceController, WKCrownDelegate {
+class TotalInterfaceController: WKInterfaceController, WKCrownDelegate, WCSessionDelegate {
 
     @IBOutlet weak var groupTotalAmount: WKInterfaceGroup!
     @IBOutlet weak var billAmount: WKInterfaceLabel!
 
-    var tip: Tip = Tip.getInstance
+    var wcSession: WCSession?
+    var tip: Tip = Tip()
     var amount: Double = 0.0
     var state: Bool = true
+
+    override init() {
+        super.init()
+        if WCSession.isSupported() {
+            wcSession = WCSession.default
+            wcSession?.delegate = self
+            wcSession?.activate()
+        }
+    }
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
         crownSequencer.delegate = self
+
+        let myObject: [String: Any] = ["getObject": Tip.getInstance]
+        print(myObject)
+
+        if let session = self.wcSession, session.isReachable {
+            DispatchQueue.main.async {
+                session.sendMessage(myObject, replyHandler: {
+                    replyData in
+
+                    if let data = replyData["newObject"] as? Data {
+                        NSKeyedUnarchiver.setClass(Tip.self, forClassName: "Tip")
+                        if let object = NSKeyedUnarchiver.unarchiveObject(with: data) as? Tip {
+                            self.tip = object
+                            self.updateUI(self.tip.total)
+                            //self.setupTable(countries: object)
+                        }
+                    }
+                }, errorHandler: nil)
+            }
+        }
     }
     
     override func willActivate() {
@@ -83,7 +114,7 @@ class TotalInterfaceController: WKInterfaceController, WKCrownDelegate {
         if state {
             amount += 1.0
         } else {
-            amount -= 1.0
+            amount = max(amount - 1.0, 0.0)
         }
 
         updateUI(amount)
@@ -94,7 +125,7 @@ class TotalInterfaceController: WKInterfaceController, WKCrownDelegate {
         if state {
             amount += 5.0
         } else {
-            amount -= 5.0
+            amount = max(amount - 5.0, 0.0)
         }
 
         updateUI(amount)
@@ -105,7 +136,7 @@ class TotalInterfaceController: WKInterfaceController, WKCrownDelegate {
         if state {
             amount += 10.0
         } else {
-            amount -= 10.0
+            amount = max(amount - 10.0, 0.0)
         }
 
         updateUI(amount)
@@ -116,11 +147,14 @@ class TotalInterfaceController: WKInterfaceController, WKCrownDelegate {
         if state {
             amount += 100.0
         } else {
-            amount -= 100.0
+            amount = max(amount - 100.0, 0.0)
         }
 
         updateUI(amount)
         updateTotal(amount)
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
 
 }
